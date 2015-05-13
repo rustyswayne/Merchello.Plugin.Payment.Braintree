@@ -24,17 +24,13 @@
     /// </summary>
     [GatewayMethodUi("BrainTree.SubscriptionRecordTransaction")]
     [GatewayMethodEditor("BrainTree Payment Method Editor", "~/App_Plugins/Merchello/Backoffice/Merchello/Dialogs/payment.paymentmethod.addedit.html")]
-    [PaymentGatewayMethod("Braintree Payment Gateway Method Editors",
-   "~/App_Plugins/Merchello.Braintree/vault/payment.vault.authorizecapturepayment.html",
-   "~/App_Plugins/Merchello.Braintree/vault/payment.vault.voidpayment.html",
-   "~/App_Plugins/Merchello.Braintree/vault/payment.vault.refundpayment.html", 
-   false)]
+    [PaymentGatewayMethod("Braintree Payment Gateway Method Editors", false)]
     public class BraintreeSubscriptionRecordPaymentMethod : PaymentGatewayMethodBase, IBraintreeSubscriptionRecordPaymentGatewayMethod
     {
         /// <summary>
         /// The _braintree api service.
         /// </summary>
-        private IBraintreeApiService _braintreeApiService;
+        private readonly IBraintreeApiService _braintreeApiService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BraintreeSubscriptionRecordPaymentMethod"/> class.

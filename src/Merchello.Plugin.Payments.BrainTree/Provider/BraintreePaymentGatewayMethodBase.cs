@@ -94,7 +94,8 @@
 
             payment.Collected = true;
             this.GatewayProviderService.Save(payment);
-            this.GatewayProviderService.ApplyPaymentToInvoice(payment.Key, invoice.Key, AppliedPaymentType.Debit, attempt.Message, amount);
+            var transactionReference = payment.ExtendedData.GetBraintreeTransaction();
+            this.GatewayProviderService.ApplyPaymentToInvoice(payment.Key, invoice.Key, AppliedPaymentType.Debit, "Payment submitted for settlement to card " + transactionReference.MaskedNumber, amount);
             return new PaymentResult(Attempt<IPayment>.Succeed(payment), invoice, true);
         }
 
@@ -133,6 +134,14 @@
                 var error = new BraintreeApiException(attempt.Errors, attempt.Message);
                 GatewayProviderService.ApplyPaymentToInvoice(payment.Key, invoice.Key, AppliedPaymentType.Refund, error.Message, 0);
                 return new PaymentResult(Attempt<IPayment>.Fail(payment, error), invoice, false);
+            }
+
+            foreach (var applied in payment.AppliedPayments())
+            {
+                applied.TransactionType = AppliedPaymentType.Refund;
+                applied.Amount = 0;
+                applied.Description += " - Refunded";
+                GatewayProviderService.Save(applied);
             }
 
             payment.Amount = payment.Amount - amount;
