@@ -3,7 +3,7 @@
 
     <!-- IMPORTS -->
     <PropertyGroup>
-        <MSBuildCustomTasksPath>$(MSBuildProjectDirectory)..\..\..\..\..\Tools\MSBuildCommunityTasks</MSBuildCustomTasksPath>
+        <MSBuildCustomTasksPath>$(MSBuildProjectDirectory)..\..\Tools\MSBuildCommunityTasks</MSBuildCustomTasksPath>
         <MSBuildCommunityTasksPath>$(MSBuildCustomTasksPath)</MSBuildCommunityTasksPath>
         <MSBuildUmbracoTasksPath>$(MSBuildCustomTasksPath)</MSBuildUmbracoTasksPath>
     </PropertyGroup>
@@ -86,7 +86,7 @@
 
     <Message Text="Beginning NuGet Pack Merchello.Plugin.Payments.Braintree.$(AssemblyInformationVersion).nupkg" Importance="high" />
 
-    <Exec WorkingDirectory="$(PackageDir)" Command="..\..\..\..\src\.nuget\NuGet.exe pack .\nuspec\Merchello.Plugin.Braintree.nuspec" />
+    <Exec WorkingDirectory="$(PackageDir)" Command="..\src\.nuget\NuGet.exe pack .\nuspec\Merchello.Plugin.Braintree.nuspec" />
 
     <Message Text="Finished NuGet Pack Merchello.Plugin.Payments.Braintree.$(AssemblyInformationVersion).nupkg" Importance="high" />
 
