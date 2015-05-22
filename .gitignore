@@ -24,3 +24,4 @@ tests/Merchello.Tests.BrainTree.Integration/bin/
 src/Merchello.Plugin.Payments.Braintree.Bazaar/obj/
 src/Merchello.Plugin.Payments.BrainTree/obj/
 tests/Merchello.Tests.BrainTree.Integration/obj/
+build/Temp/
