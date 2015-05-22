@@ -157,8 +157,10 @@ namespace Merchello.Plugin.Payments.Braintree.Services
             if (result.IsSuccess())
             {
                 var cacheKey = MakePaymentMethodCacheKey(token);
-
                 RuntimeCache.ClearCacheItem(cacheKey);
+
+                var customerCacheKey = MakeCustomerCacheKey(customer);
+                RuntimeCache.ClearCacheItem(customerCacheKey);
 
                 Created.RaiseEvent(new Core.Events.NewEventArgs<PaymentMethod>(result.Target), this);
 
@@ -244,7 +246,6 @@ namespace Merchello.Plugin.Payments.Braintree.Services
             if (result.IsSuccess())
             {
                 var cacheKey = MakePaymentMethodCacheKey(token);
-
                 RuntimeCache.ClearCacheItem(cacheKey);
 
                 Updated.RaiseEvent(new SaveEventArgs<PaymentMethod>(result.Target), this);
@@ -276,6 +277,7 @@ namespace Merchello.Plugin.Payments.Braintree.Services
             {
                 BraintreeGateway.PaymentMethod.Delete(token);
                 RuntimeCache.ClearCacheItem(MakePaymentMethodCacheKey(token));
+
             }
             catch (Exception ex)
             {
