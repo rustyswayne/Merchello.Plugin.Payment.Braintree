@@ -16,3 +16,4 @@ Cached/
 !**/App_Data/[Pp]ackages/
 !**/[Uu]mbraco/[Dd]eveloper/[Pp]ackages
 *.suo
+*.cache
