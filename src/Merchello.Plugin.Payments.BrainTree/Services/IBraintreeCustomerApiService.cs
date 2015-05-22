@@ -146,5 +146,10 @@
         /// The <see cref="ResourceCollection{Customer}"/>.
         /// </returns>
         ResourceCollection<Customer> GetAll();
+
+        /// <summary>
+        /// Clear the customer cache
+        /// </summary>
+        void ClearCustomerCache(ICustomer customer);
     }   
 }

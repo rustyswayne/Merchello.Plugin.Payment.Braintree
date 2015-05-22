@@ -337,5 +337,15 @@
 
             return attempt.Success ? attempt.Result : null;
         }
+
+        /// <summary>
+        /// Clear the customer cache
+        /// </summary>
+        public void ClearCustomerCache(ICustomer customer)
+        {
+            var cacheKey = MakeCustomerCacheKey(customer);
+
+            RuntimeCache.ClearCacheItem(cacheKey);
+        }
     }
 }
