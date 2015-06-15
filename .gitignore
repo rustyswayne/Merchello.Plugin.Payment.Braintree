@@ -25,3 +25,4 @@ src/Merchello.Plugin.Payments.Braintree.Bazaar/obj/
 src/Merchello.Plugin.Payments.BrainTree/obj/
 tests/Merchello.Tests.BrainTree.Integration/obj/
 build/Temp/
+build/Merchello.Plugin.Braintree.2.1.1.0.nupkg

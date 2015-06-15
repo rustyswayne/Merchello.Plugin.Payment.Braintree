@@ -124,7 +124,7 @@
             var email = string.Empty;
             if (args.ContainsKey("customerEmail")) email = args["customerEmail"];
 
-            var attempt = ProcessPayment(invoice, TransactionOption.Authorize, invoice.Total, paymentMethodNonce, email);
+            var attempt = ProcessPayment(invoice, TransactionOption.SubmitForSettlement, invoice.Total, paymentMethodNonce, email);
 
             var payment = attempt.Payment.Result;
 
