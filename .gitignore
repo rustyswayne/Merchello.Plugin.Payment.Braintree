@@ -26,3 +26,8 @@ src/Merchello.Plugin.Payments.BrainTree/obj/
 tests/Merchello.Tests.BrainTree.Integration/obj/
 build/Temp/
 build/Merchello.Plugin.Braintree.2.1.1.0.nupkg
+tests/Merchello.Tests.BrainTree.Integration/App_Data/
+src/Merchello.Plugin.Payments.Braintree.Bazaar/App_Data/NuGetBackup/
+src/Merchello.Plugin.Payments.BrainTree/App_Data/NuGetBackup/
+artifacts/
+*.old

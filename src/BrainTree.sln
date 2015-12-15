@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C63E81EB-22C7-4B40-BBCE-1FC5D858C380}"
 EndProject
@@ -25,6 +25,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F715A7
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Package", "Build Package", "{4434C839-CB51-4AD7-BC01-19CC125DB0F8}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+		..\build\Braintree.proj = ..\build\Braintree.proj
+		..\build-appveyor.cmd = ..\build-appveyor.cmd
+		..\build.cmd = ..\build.cmd
+		..\build\NuSpec\Merchello.Plugin.Braintree.nuspec = ..\build\NuSpec\Merchello.Plugin.Braintree.nuspec
+		..\build\package.proj = ..\build\package.proj
 	EndProjectSection
 EndProject
 Global
