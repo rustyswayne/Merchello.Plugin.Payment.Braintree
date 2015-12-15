@@ -7,7 +7,7 @@ init:
   - set UMBRACO_PACKAGE_PRERELEASE_SUFFIX=
 
 cache:
-- C:\projects\merchello\src\packages -> appveyor.yml
+- C:\projects\merchello-plugin-payment-braintree\src\packages -> appveyor.yml
 
 
 build_script:
