@@ -1,3 +1,7 @@
+# No longer being maintained
+
+This code has been moved into the main Merchello project
+
 # Merchello.Plugin.Payments.Braintree
 
      // Author: Rusty Swayne
